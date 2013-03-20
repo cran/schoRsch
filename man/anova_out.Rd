@@ -1,0 +1,32 @@
+\name{anova_out}
+\alias{anova_out}
+\title{Format ANOVA Output}
+\description{Distilles the most relevant data from an output object of \code{ezANOVA} and displays the results in a compact format.}
+\usage{
+anova_out(ezout, print = TRUE, sph.cor = "GG", mau.p = 0.05,
+          etasq = "partial", dfsep = ", ")
+}
+\arguments{
+  \item{ezout}{Output object created by a call to \code{ezANOVA}.}
+  \item{print}{Display results (logical; default=\code{TRUE}).}
+  \item{sph.cor}{Correction method (one of \code{"no","GG","HF"}; default=\code{"GG"}).}
+  \item{mau.p}{Threshold for Mauchly's test of sphericity (numerical; default=\code{0.05}).}
+  \item{etasq}{Effect size estimate to be used; either partial eta-squared (\code{"partial"; default}) or generalized eta-squared (\code{"generalized"}).}
+  \item{dfsep}{String that delimits the degrees of freedom of each F-value (default=\code{", "}).}
+}
+\details{
+The output of a call to \code{ezANOVA} is formatted according to the guidelines of the APA (American Psychological Association) as well as the DGPs ("Deutsche Gesellschaft fuer Psychologie"; German Psychological Society).\cr\cr
+For repeated-measures ANOVAs, sphericity corrections are automatically applied to the p-values of effects that produced a significant result in Mauchly's test of sphericity. The corresponding input arguments (\code{sph.cor} and \code{mau.p}) do not affect between-subject designs.
+}
+\value{
+  \code{anoout(ezout,...)} returns a list containing (1) the ANOVA table, (2) sphericity tests and corrections (if applicable), (3) formatted ANOVA results, (4) notes about which correction was applied to which effect.
+}
+% \references{}
+\author{Roland Pfister, Markus Janczyk}
+% \note{}
+
+\seealso{
+  \code{\link[ez:ezANOVA]{ezANOVA}}; \code{\link{aov}};
+}
+% \examples{}
+% \keyword{ }
