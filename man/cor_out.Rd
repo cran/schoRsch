@@ -7,7 +7,7 @@ cor_out(coroutput, stats = FALSE, print = TRUE)
 }
 \arguments{
   \item{coroutput}{Output object created by a call to \code{cor.test}.}
-  \item{stats}{If \code{TRUE}, the output includes t-values and corresponding degrees of freedom (default=\code{FALSE}.}
+  \item{stats}{If \code{TRUE}, the output includes t-values and corresponding degrees of freedom (default=\code{FALSE}).}
   \item{print}{Display results (logical; default=\code{TRUE}).}
 }
 \details{
@@ -21,7 +21,7 @@ The output of a call to \code{cor.test} is formatted according to the guidelines
 % \note{}
 
 \seealso{
-  \code{\link{cor}}; \code{\link{cor.test}};
+  \code{\link{cor}}; \code{\link{cor.test}}; \code{\link{anova_out}}; \code{\link{chi_out}}; \code{\link{t_out}};
 }
 % \examples{}
 % \keyword{ }
