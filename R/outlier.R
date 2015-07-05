@@ -44,8 +44,8 @@ outlier <- function( data, dv,
   {
     if (limit.exact == FALSE) {
       tempdata$tempvar[tempdata[which_column]>upper.limit] <- 1 
-      #### blöde Frage: müsste hier nicht tempdata[,which_clumn] stehen?
-      # MJ: Keine Ahnung... funktioniert ja seltsamerweise...
+      #### dev note: Might be changed to tempdata[,which_clumn] 
+	  #### in future releases (never change a running system though)
     } else {
       tempdata$tempvar[tempdata[which_column]>upper.limit] <- 1 
     }
@@ -63,12 +63,12 @@ outlier <- function( data, dv,
 
   ##############################################################################################
   ## Work on z-scores
-  ## z scores  <---- das könnte Basis für eine revidierte Version von zscores.R werden.
+  ## z scores  <---- dev note: could be a starting point for a revised version of zscores.R.
   if ((!is.nan(upper.z)) | (!is.nan(upper.z)))
   {
     tempdata$zscores <- NaN 
-    ### Hier kann noch ein Problem entstehen wenn die Variable sowieso existiert (gilt auch für tempvar).
-    ### MJ: Das richtig... vielleicht einfach was wirres nehmen?!
+    ### dev note: Could cause problems if the variable already exists (also applies to tempvar).
+    ### might be changed to a more random name in future releases
     
     zindex <- as.logical(1-tempdata$tempvar)
     # Check factor definition

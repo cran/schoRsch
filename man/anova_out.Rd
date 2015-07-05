@@ -19,7 +19,7 @@ The output of a call to \code{ezANOVA} is formatted according to the guidelines 
 For repeated-measures ANOVAs, sphericity corrections are automatically applied to the p-values of effects that produced a significant result in Mauchly's test of sphericity. The corresponding input arguments (\code{sph.cor} and \code{mau.p}) do not affect between-subject designs.
 }
 \value{
-  \code{anova_out(ezout,...)} returns a list containing (1) the ANOVA table, (2) sphericity tests and corrections (if applicable), (3) formatted ANOVA results, (4) notes about which correction was applied to which effect.
+  \code{anoout(ezout,...)} returns a list containing (1) the ANOVA table, (2) sphericity tests and corrections (if applicable), (3) formatted ANOVA results, (4) notes about which correction was applied to which effect.
 }
 % \references{}
 \author{Roland Pfister, Markus Janczyk}

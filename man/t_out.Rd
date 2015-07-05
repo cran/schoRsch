@@ -4,8 +4,8 @@
 \description{Distilles the most relevant data from an output object of \code{t.test} and displays the results in a compact format.}
 \usage{
 t_out(toutput, n.equal = TRUE,
-	    welch.df.exact = TRUE, welch.n = NA,
-	    d.corr = TRUE, print = TRUE)
+	welch.df.exact = TRUE, welch.n = NA,
+	d.corr = TRUE, print = TRUE)
 }
 \arguments{
   \item{toutput}{Output object created by a call to \code{t.test}.}

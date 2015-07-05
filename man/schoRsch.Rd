@@ -3,17 +3,17 @@
 \alias{schoRsch-package}
 \docType{package}
 \title{
-Tools for analyzing factorial experiments
+Tools for Analyzing Factorial Experiments
 }
 \description{
-The package offers a helping hand to psychologists and other behavioral scientists who routinely deal with experimental data from factorial experiments. It includes several functions to format output from other R functions according to the style guidelines of the APA (American Psychological Association). This formatted output can be copied directly into manuscripts to facilitate data reporting. These features are backed up by a toolkit of several small helper functions, e.g., offering out-of-the-box outlier removal. The package lends its name to Georg "Schorsch" Schuessler, ingenious technician at the Department of Psychology III, University of Wuerzburg.
+Offers a helping hand to psychologists and other behavioral scientists who routinely deal with experimental data from factorial experiments. It includes several functions to format output from other R functions according to the style guidelines of the APA (American Psychological Association). This formatted output can be copied directly into manuscripts to facilitate data reporting. These features are backed up by a toolkit of several small helper functions, e.g., offering out-of-the-box outlier removal. The package lends its name to Georg "Schorsch" Schuessler, ingenious technician at the Department of Psychology III, University of Wuerzburg.
 }
 \details{
 \tabular{ll}{
 Package: \tab schoRsch\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
-Date: \tab 2014-07-30\cr
+Version: \tab 1.2\cr
+Date: \tab 2015-07-05\cr
 License: \tab GPL-3\cr
 }
 This package contains the following functions:
@@ -31,6 +31,7 @@ This package contains the following functions:
 }
 Version history:
 \itemize{
+  \item{v1.2 | 2015-07-05 | }{Bugfix for the \code{print} option of \code{anova_out} (thanks to Sylvain Clement for sending in the bug report). Minor code changes.}
   \item{v1.1 | 2014-07-30 | }{Current version. New functions \code{chi_out} (contributed by Daniel Gromer) and \code{toclipboard}; bugfixes when \code{anova_out} is called without detailed=TRUE. Updated help files.}
   \item{v1.0 | 2013-03-20 | }{Package release.}
 }

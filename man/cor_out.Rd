@@ -7,7 +7,7 @@ cor_out(coroutput, stats = FALSE, print = TRUE)
 }
 \arguments{
   \item{coroutput}{Output object created by a call to \code{cor.test}.}
-  \item{stats}{If \code{TRUE}, the output includes t-values and corresponding degrees of freedom (default=\code{FALSE}).}
+  \item{stats}{If \code{TRUE}, the output includes t-values and corresponding degrees of freedom (default=\code{FALSE}.}
   \item{print}{Display results (logical; default=\code{TRUE}).}
 }
 \details{

@@ -10,7 +10,7 @@ cd(x)
 }
 }
 \details{
-\code{cd} is designed as an equivalent to the DOS command. Contrary to the common use of cd, however, this function does not take absolute paths as input. Use \code{setwd} instead to navigate to an absolute path.
+\code{cd} is designed as an equivalent to the DOS command. Contrary to the common use of cd, however, this function does not take absolute paths as input. Use \code{setwd} instead to navigate to an absulte path.
 }
 \value{
   \code{cd(x)} returns the new working directory.
