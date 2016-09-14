@@ -13,7 +13,7 @@ t_out(toutput, n.equal = TRUE,
   \item{welch.df.exact}{Only applicable to Welch-tests. Indicates whether Welch-adjusted or unadjusted degrees of freedom (dfs) are reported (default=\code{TRUE}, i.e., Welch-adjusted dfs). If set to \code{FALSE}, the parameter \code{welch.n} has to be set as well.}
   \item{welch.n}{Only applicable to Welch-tests with unadjusted degrees of freedom. Parameter should be equal to the total sample size \code{n=n_1+n_2}.}
   \item{d.corr}{Only applicable to one-sample or paired-samples t-tests. If \code{TRUE} (default), Cohen's ds are computed using \code{sqrt(2)}-correction.}
-  \item{print}{Display results (logical; default=\code{TRUE}).}
+  \item{print}{Force results to be displayed, even if the function output is assigned to a variable (e.g., \code{output <- t_out(...)}; logical; default=\code{TRUE}).}
 }
 \details{
 The output of a call to \code{t_out} is formatted according to the guidelines of the APA (American Psychological Association) as well as the DGPs ("Deutsche Gesellschaft fuer Psychologie"; German Psychological Society).

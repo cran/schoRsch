@@ -1,7 +1,7 @@
 \name{outlier}
 \alias{outlier}
 \title{Screen Data for Outliers}
-\description{A chosen column of a data frame is screened for outliers, outliers are marked and/or eliminated. Either absolute lower and upper limits are applied, or outliers are identified based on z-transformed data.}
+\description{A chosen column of a data frame is screened for outliers, outliers are marked and/or eliminated. Either absolute lower and upper limits are applied, or outliers are identified based on z-transformed data. Either exact limits and/or cutoffs based on z-values need to be entered.}
 \usage{
 outlier(data, dv, 
         todo = "na", res.name = "outlier",
@@ -16,8 +16,8 @@ outlier(data, dv,
 \arguments{
   \item{data}{A data frame containing the data to be screened as well was appropriate condition variables.}
   \item{dv}{Character string specifying the name of the variable within \code{data} that is to be screened for outlier. Alternatively, \code{dv} can be the appropriate column index.}
-  \item{todo}{Character string specifying the fate of outliers: \code{"na"} - outliers are turned into NAs, \code{"elim"} - rows containing outliers are deleted from dataframe, \code{"nothing"} - nothing happens, DEFAULT: \code{todo = "na"}.}
-  \item{res.name}{Character string specifying the name of the variable wherein outliers are marked, DEFAULT: \code{res.name = "outlier"}.}
+  \item{todo}{Character string specifying the fate of outliers: \code{"na"} - outliers are turned into NAs, \code{"elim"} - rows containing outliers are deleted from dataframe, \code{"nothing"} - nothing happens, default=\code{todo = "na"}.}
+  \item{res.name}{Character string specifying the name of the variable to be used for marking outliers, default=\code{res.name = "outlier"}.}
   \item{upper.limit}{An optional numerical specifying the absolute upper limit defining outliers.}
   \item{lower.limit}{An optional numerical specifying the absolute lower limit defining outliers.}
   \item{limit.exact}{Logical, if \code{TRUE} values equal to \code{lower.limit}/\code{upper.limit} are deemed outlier.}

@@ -12,13 +12,13 @@ Offers a helping hand to psychologists and other behavioral scientists who routi
 \tabular{ll}{
 Package: \tab schoRsch\cr
 Type: \tab Package\cr
-Version: \tab 1.2\cr
-Date: \tab 2015-07-05\cr
+Version: \tab 1.3\cr
+Date: \tab 2016-09-13\cr
 License: \tab GPL-3\cr
 }
 This package contains the following functions:
 \itemize{
-  \item{\code{\link[schoRsch:anova_out]{anova_out}}: }{Formats the output object from \code{\link[ez:ezANOVA]{ezANOVA}} to the APA style.}
+  \item{\code{\link[schoRsch:anova_out]{anova_out}}: }{Formats the output object from \code{\link[ez:ezANOVA]{ezANOVA}} to the APA style (requires the \code{\link[ez]{ez}} package).}
   \item{\code{\link[schoRsch:cor_out]{cor_out}}: }{Formats the output object from \code{\link[stats:cor.test]{cor.test}} to the APA style.}
   \item{\code{\link[schoRsch:chi_out]{chi_out}}: }{Formats the output object from \code{\link[stats:chisq.test]{chisq.test}} to the APA style.}
   \item{\code{\link[schoRsch:t_out]{t_out}}: }{Formats the output object from \code{\link[stats:t.test]{t.test}} to the APA style.}
@@ -31,15 +31,18 @@ This package contains the following functions:
 }
 Version history:
 \itemize{
+  \item{v1.3 | 2016-09-13 | }{Overall documentation update based on comments from Vincent LeBlanc.}
   \item{v1.2 | 2015-07-05 | }{Bugfix for the \code{print} option of \code{anova_out} (thanks to Sylvain Clement for sending in the bug report). Minor code changes.}
   \item{v1.1 | 2014-07-30 | }{Current version. New functions \code{chi_out} (contributed by Daniel Gromer) and \code{toclipboard}; bugfixes when \code{anova_out} is called without detailed=TRUE. Updated help files.}
   \item{v1.0 | 2013-03-20 | }{Package release.}
 }
 }
 \author{
-Roland Pfister, Markus Janczyk; <firstname.lastname(at)uni-wuerzburg.de>
+Roland Pfister <roland.pfister(at)psychologie.uni-wuerzburg.de>, Markus Janczyk; 
 }
-% \references{}
+\references{
+Pfister, R., & Janczyk, M. (2016). schoRsch: An R package for analyzing and reporting factorial experiments. \emph{The Quantitative Methods for Psychology}, \emph{12}(2), 147-151. doi: 10.20982/tqmp.12.2.p147
+}
 \keyword{ package }
 % \seealso{
 %% ~~ Optional links to other man pages, e.g. ~~

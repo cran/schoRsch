@@ -122,7 +122,9 @@ anova_out <- function(ezout,
         }
         # Else/End: Check if sph.cor != "NO"
       } else {
-        if (outspher!="N/A") {
+	  	if (toupper(sph.cor) == "NO") {
+		  note <- "Reporting unadjusted p-values."
+		} else if (outspher!="N/A") {
           note <- "Reporting unadjusted p-values."
         }
       } 

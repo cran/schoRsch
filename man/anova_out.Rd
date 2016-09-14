@@ -8,7 +8,7 @@ anova_out(ezout, print = TRUE, sph.cor = "GG", mau.p = 0.05,
 }
 \arguments{
   \item{ezout}{Output object created by a call to \code{ezANOVA}. This call has to have included a detailed output (\code{detailed=TRUE}).}
-  \item{print}{Display results (logical; default=\code{TRUE}).}
+  \item{print}{Force results to be displayed, even if the function output is assigned to a variable (e.g., \code{output <- anova_out(...)}; logical; default=\code{TRUE}).}
   \item{sph.cor}{Correction method (one of \code{"no","GG","HF"}; default=\code{"GG"}).}
   \item{mau.p}{Threshold for Mauchly's test of sphericity (numerical; default=\code{0.05}).}
   \item{etasq}{Effect size estimate to be used; either partial eta-squared (\code{"partial"; default}) or generalized eta-squared (\code{"generalized"}).}

@@ -8,7 +8,7 @@ cor_out(coroutput, stats = FALSE, print = TRUE)
 \arguments{
   \item{coroutput}{Output object created by a call to \code{cor.test}.}
   \item{stats}{If \code{TRUE}, the output includes t-values and corresponding degrees of freedom (default=\code{FALSE}.}
-  \item{print}{Display results (logical; default=\code{TRUE}).}
+  \item{print}{Force results to be displayed, even if the function output is assigned to a variable (e.g., \code{output <- cor_out(...)}; logical; default=\code{TRUE}).}
 }
 \details{
 The output of a call to \code{cor.test} is formatted according to the guidelines of the APA (American Psychological Association) as well as the DGPs ("Deutsche Gesellschaft fuer Psychologie"; German Psychological Society).

@@ -9,7 +9,7 @@ chi_out(chioutput, show.n = FALSE,
 \arguments{
   \item{chioutput}{Output object created by a call to \code{chisq.test}.}
   \item{show.n}{Display sample size (logical; default=\code{FALSE})}
-  \item{print}{Display results (logical; default=\code{TRUE}).}
+  \item{print}{Force results to be displayed, even if the function output is assigned to a variable (e.g., \code{output <- chi_out(...)}; logical; default=\code{TRUE}).}
 }
 \details{
 The output of a call to \code{chi_out} is formatted according to the guidelines of the APA (American Psychological Association) as well as the DGPs ("Deutsche Gesellschaft fuer Psychologie"; German Psychological Society).
