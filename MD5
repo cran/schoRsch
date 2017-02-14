@@ -1,10 +1,10 @@
-b104f1c8d1e372691e1d7e44d379d8f8 *DESCRIPTION
+4ddcfff75733f25f27de7b7f2503d6cf *DESCRIPTION
 e0594060c30a82c7dfc4296ff877b46d *NAMESPACE
 ffc506b842f025f629acd2660cad9db2 *R/anova_out.R
 bc449636c5786f5ca293cc6788940fe2 *R/cd.R
 dcb60a99d7f2ba60aa8e470d23aded57 *R/chi_out.R
 b565242b0d01b986ccd1aad534373fe4 *R/clear.R
-ae5c515e7c9368360752592d5d9d577f *R/cor_out.R
+f7348d30c3cbe7a338c5f22f145a18b2 *R/cor_out.R
 b804527badaf57d4df09a49dbd9dd59a *R/ntiles.R
 1a57fbe18944db6ee9ec4dcf79620eb7 *R/outlier.R
 c3ed65b77f1f00e868d5d24da485d793 *R/t_out.R
@@ -17,7 +17,7 @@ f66db035912dff4b29a437d6208e8372 *man/anova_out.Rd
 3ac9fc28e09ea5257fb3c7ad7fad5844 *man/cor_out.Rd
 1e3e7cfd7d8394dfc33de20c8feae096 *man/ntiles.Rd
 abaf15a9ec43cc65424b7683572b57e7 *man/outlier.Rd
-bd18affd315e8a1bb663955d3f3bb232 *man/schoRsch.Rd
+556828050eb0ab2d6e239a42a1735ed3 *man/schoRsch.Rd
 0600029f54795c47f5f503a98e465951 *man/t_out.Rd
 c2b1797529fdee31902fbc34bbb956ea *man/toclipboard.Rd
 f492c1585a8986b5add00f8c027f7de9 *man/zscores.Rd

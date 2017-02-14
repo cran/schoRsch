@@ -12,8 +12,8 @@ Offers a helping hand to psychologists and other behavioral scientists who routi
 \tabular{ll}{
 Package: \tab schoRsch\cr
 Type: \tab Package\cr
-Version: \tab 1.3\cr
-Date: \tab 2016-09-13\cr
+Version: \tab 1.4\cr
+Date: \tab 2017-02-14\cr
 License: \tab GPL-3\cr
 }
 This package contains the following functions:
@@ -31,9 +31,10 @@ This package contains the following functions:
 }
 Version history:
 \itemize{
+  \item{v1.4 | 2017-02-14 | }{Bugfix for \code{cor_out} that no longer displays leading zeros for correlation coefficients; thanks to Juan Ramon Barrada for sending in the bug report.}
   \item{v1.3 | 2016-09-13 | }{Overall documentation update based on comments from Vincent LeBlanc.}
-  \item{v1.2 | 2015-07-05 | }{Bugfix for the \code{print} option of \code{anova_out} (thanks to Sylvain Clement for sending in the bug report). Minor code changes.}
-  \item{v1.1 | 2014-07-30 | }{Current version. New functions \code{chi_out} (contributed by Daniel Gromer) and \code{toclipboard}; bugfixes when \code{anova_out} is called without detailed=TRUE. Updated help files.}
+  \item{v1.2 | 2015-07-05 | }{Bugfix for the \code{print} option of \code{anova_out}; thanks to Sylvain Clement for sending in the bug report. Minor code changes.}
+  \item{v1.1 | 2014-07-30 | }{New functions \code{chi_out} (contributed by Daniel Gromer) and \code{toclipboard}; bugfixes when \code{anova_out} is called without detailed=TRUE. Updated help files.}
   \item{v1.0 | 2013-03-20 | }{Package release.}
 }
 }

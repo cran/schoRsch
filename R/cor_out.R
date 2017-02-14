@@ -60,18 +60,24 @@ cor_out <- function(coroutput, stats = FALSE, print = TRUE) {
      pcorr <- gsub("p = 1.000","p > .999", pcorr, fixed=TRUE)
      pcorr <- gsub("p = 0.000","p < .001", pcorr, fixed=TRUE)
      pcorr <- gsub("p = 0","p = ", pcorr, fixed=TRUE)
+     
+     rcorr <- gsub("0.",".",outtable$coefficient,fixed=TRUE)
+     rcorr <- gsub("-.0","-.",rcorr,fixed=TRUE)
     
   outtext <- data.frame(
-  Text=paste("r(",outtable$n,") = ", outtable$coefficient,statout, pcorr,sep=""));
+  Text=paste("r(",outtable$n,") = ", rcorr,statout, pcorr,sep=""));
   }  else if (coroutput$method == "Kendall's rank correlation tau")
   {
      pcorr <- paste(", p = ", outtable$p, sep="")
      pcorr <- gsub("p = 1.000","p > .999", pcorr, fixed=TRUE)
      pcorr <- gsub("p = 0.000","p < .001", pcorr, fixed=TRUE)
      pcorr <- gsub("p = 0","p = ", pcorr, fixed=TRUE)
+     
+     rcorr <- gsub("0.",".",outtable$coefficient,fixed=TRUE)
+     rcorr <- gsub("-.0","-.",rcorr,fixed=TRUE)
     
      outtext <- data.frame(
-     Text=paste("tau = " , outtable$coefficient,statout, pcorr, sep="")); 
+     Text=paste("tau = " , rcorr,statout, pcorr, sep="")); 
   }  else if (coroutput$method == "Spearman's rank correlation rho")
   {
     
@@ -80,8 +86,11 @@ cor_out <- function(coroutput, stats = FALSE, print = TRUE) {
      pcorr <- gsub("p = 0.000","p < .001", pcorr, fixed=TRUE)
      pcorr <- gsub("p = 0","p = ", pcorr, fixed=TRUE)
      
+     rcorr <- gsub("0.",".",outtable$coefficient,fixed=TRUE)
+     rcorr <- gsub("-.0","-.",rcorr,fixed=TRUE)
+     
      outtext <- data.frame(
-     Text=paste("rho = " , outtable$coefficient, statout,pcorr,sep=""));
+     Text=paste("rho = " , rcorr, statout,pcorr,sep=""));
   }
   
   if (print==TRUE) {
