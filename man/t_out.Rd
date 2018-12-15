@@ -5,14 +5,14 @@
 \usage{
 t_out(toutput, n.equal = TRUE,
 	welch.df.exact = TRUE, welch.n = NA,
-	d.corr = TRUE, print = TRUE)
+	d.corr = FALSE, print = TRUE)
 }
 \arguments{
   \item{toutput}{Output object created by a call to \code{t.test}.}
   \item{n.equal}{Only applicable to two-sample t-tests. If sample sizes are not equal, \code{n.equal} specifies a vector of sample sizes, e.g., \code{n.equal = c(12,8)}.}
   \item{welch.df.exact}{Only applicable to Welch-tests. Indicates whether Welch-adjusted or unadjusted degrees of freedom (dfs) are reported (default=\code{TRUE}, i.e., Welch-adjusted dfs). If set to \code{FALSE}, the parameter \code{welch.n} has to be set as well.}
   \item{welch.n}{Only applicable to Welch-tests with unadjusted degrees of freedom. Parameter should be equal to the total sample size \code{n=n_1+n_2}.}
-  \item{d.corr}{Only applicable to one-sample or paired-samples t-tests. If \code{TRUE} (default), Cohen's ds are computed using \code{sqrt(2)}-correction.}
+  \item{d.corr}{Only applicable to one-sample or paired-samples t-tests. If \code{TRUE}, Cohen's ds are computed using \code{sqrt(2)}-correction. Default changed to \code{FALSE} from version 1.5 onwards with an additional feedback message showing the use of corrections.}
   \item{print}{Force results to be displayed, even if the function output is assigned to a variable (e.g., \code{output <- t_out(...)}; logical; default=\code{TRUE}).}
 }
 \details{

@@ -6,7 +6,7 @@ t_out <- function(toutput,
                   n.equal = TRUE,
                   welch.df.exact = TRUE,
                   welch.n = NA,
-                  d.corr = TRUE,
+                  d.corr = FALSE,
                   print = TRUE) {
   
   # ---------------------------------------------
@@ -35,9 +35,11 @@ t_out <- function(toutput,
     }
   # Paired samples, including correction
   } else if (d.corr==TRUE) {
+    note = "Reporting adjusted estimate for Cohen's d.";
     d = toutput$statistic / sqrt(toutput$parameter+1) * sqrt(2);
   # Paired samples, uncorrected
   } else {
+    note = "Reporting unadjusted estimate for Cohen's d.";
     d = toutput$statistic / sqrt(toutput$parameter+1);
   }
   # Round Welch-adjusted dfs
@@ -68,10 +70,19 @@ t_out <- function(toutput,
     Test=paste(toutput$method,":",sep=""),
     Results=paste("t(",outtable$df,") = " , outtable$t, pcorr,
              ", d = ",outtable$d,sep=""));
-    
+  
+	# ---------------------------------------------
+  # Combine and display t-test results
+  # ---------------------------------------------  
+  #if (exists("note")) {
+  #  outtext = c(outtext,"NOTE:"=note); 
+  #}
   if (print==TRUE) {
     print(outtext);
+    if (exists("note")) {
+        cat(paste("\nNOTE: ", note,sep="")); 
+    }
   } else {
-    outtext; 
+    outtext;
   }
 }

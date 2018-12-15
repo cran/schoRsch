@@ -7,7 +7,9 @@ anova_out <- function(ezout,
                       sph.cor = "GG",
                       mau.p   = 0.05,
                       etasq   = "partial",
-                      dfsep   = ", ") {
+                      dfsep   = ", ",
+					            corr.df  = FALSE,
+					            show.eps = 0) {
   
   # ---------------------------------------------
   # (1) Check input arguments
@@ -28,6 +30,16 @@ anova_out <- function(ezout,
     etasq="partial"
     print(paste("Warning: Unknown effect size specified!",
                 " Reporting partial eta squared instead.",sep=""),quote=FALSE)  
+  }
+  
+  # Check for inconsistent sphericity mehod
+  if (show.eps!=0 &
+        show.eps!=1 &
+		show.eps!=2 &
+		show.eps!=3) {
+    show.eps=0
+    print(paste("Warning: Unknown reporting method for epsilon specified!",
+                " Omitting epsilon statistics for violations of sphericity.",sep=""),quote=FALSE)  
   }
   
   # ---------------------------------------------
@@ -86,6 +98,7 @@ anova_out <- function(ezout,
     if ("ANOVA" %in% names(x)) {
       # Adjust p values when sphericity is violated
       txttable <- outtable;
+	  txttable$epsilon <- ""
       ajdffcts <- list();
       # Check all effects listed in "Sphericity Corrections"
       if (toupper(sph.cor)!="NO") {
@@ -100,11 +113,51 @@ anova_out <- function(ezout,
                 if (toupper(sph.cor)=="GG") {
                   pmaucorr <- format(round(x$"Sphericity Corrections"$"p[GG]"[isph],3),nsmall=3);
                   levels(txttable$p) <- c(levels(txttable$p), pmaucorr)
-                  txttable[iaov,6]=pmaucorr;
+                  txttable[iaov,6] <- pmaucorr;
+				  # Correct dfs and get epsilon estimates
+				  if (corr.df == TRUE) {
+					corr.df1 <- format(round(x$"Sphericity Corrections"$GGe[isph]*txttable[iaov,3],2),nsmall=2);
+					corr.df2 <- format(round(x$"Sphericity Corrections"$GGe[isph]*txttable[iaov,4],2),nsmall=2);
+				    txttable[iaov,3]=corr.df1;
+					# Append epsilon estimate to df2 (if it is to be reported in the df parentheses)
+					if (show.eps == 1) {
+						txttable[iaov,4] <- paste(corr.df2, dfsep, "e = ", format(round(x$"Sphericity Corrections"$GGe[isph],2),nsmall=2), sep="");
+					} else {
+						txttable[iaov,4] <- corr.df2;
+					}
+				  } else if (show.eps == 1) {
+					txttable[iaov,4] <- paste(txttable[iaov,4], dfsep, "e = ", format(round(x$"Sphericity Corrections"$GGe[isph],2),nsmall=2), sep="");
+				  } else if (show.eps == 2) {
+						txttable$epsilon[iaov] <- paste(" (e = ", format(round(x$"Sphericity Corrections"$GGe[isph],2),nsmall=2), ")", sep="");
+				  }
+				  # Print epsilon estimate in additional column (if it is to be reported after the dfs)
+				  if (show.eps >= 2) {
+					txttable$epsilon[iaov] <- paste(" (e = ", format(round(x$"Sphericity Corrections"$GGe[isph],2),nsmall=2), ")", sep="");
+				  }
                 } else if (toupper(sph.cor)=="HF") {
                   pmaucorr <- format(round(x$"Sphericity Corrections"$"p[HF]"[isph],3),nsmall=3);
                   levels(txttable$p) <- c(levels(txttable$p), pmaucorr)
                   txttable[iaov,6]=pmaucorr
+				  # Correct dfs and get epsilon estimates
+				  if (corr.df == TRUE) {
+					corr.df1 <- format(round(x$"Sphericity Corrections"$HFe[isph]*txttable[iaov,3],2),nsmall=2);
+					corr.df2 <- format(round(x$"Sphericity Corrections"$HFe[isph]*txttable[iaov,4],2),nsmall=2);
+				    txttable[iaov,3]=corr.df1;
+					# Append epsilon estimate to df2 (if it is to be reported in the df parentheses)
+					if (show.eps == 1) {
+						txttable[iaov,4] <- paste(corr.df2, dfsep, "e = ", format(round(x$"Sphericity Corrections"$HFe[isph],2),nsmall=2), sep="");
+					} else {
+						txttable[iaov,4] <- corr.df2;
+					}
+				  } else if (show.eps == 1) {
+					txttable[iaov,4] <- paste(txttable[iaov,4], dfsep, "e = ", format(round(x$"Sphericity Corrections"$HFe[isph],2),nsmall=2), sep="");
+				  }else if (show.eps >= 2) {
+						txttable$epsilon[iaov] <- paste(" (e = ", format(round(x$"Sphericity Corrections"$HFe[isph],2),nsmall=2), ")", sep="");
+				  }
+				  # Print epsilon estimate in additional column (if it is to be reported after the dfs)
+				  if (show.eps >= 2) {
+					txttable$epsilon[iaov] <- paste(" (e = ", format(round(x$"Sphericity Corrections"$HFe[isph],2),nsmall=2), ")", sep="");
+				  }
                 }
                 ajdffcts <- c(ajdffcts,eoi);
               }
@@ -116,9 +169,15 @@ anova_out <- function(ezout,
           note <- paste("No adjustments necessary (all p_Mauchly > ", mau.p,
                         ").",sep="")
         } else {
+		  if (corr.df == TRUE) {
+			notedf <- " Reporting corrected degrees of freedom."
+		  } else {
+		    notedf <- " Reporting uncorrected degrees of freedom."
+		  }
+		  
           note <- paste("p-values for the following effects were ", sph.cor,
                         "-adjusted (p_Mauchly <= ", mau.p, "): ",
-                        paste(paste(ajdffcts,collapse="; ",sep=""),".",sep=""),sep="");
+                        paste(paste(ajdffcts,collapse="; ",sep=""), ".", notedf,sep=""),sep="");
         }
         # Else/End: Check if sph.cor != "NO"
       } else {
@@ -143,11 +202,27 @@ anova_out <- function(ezout,
         petasqcorr <- gsub("np2 = 0.00","np2 < .01", petasqcorr, fixed=TRUE)
         petasqcorr <- gsub("np2 = 0","np2 = ", petasqcorr, fixed=TRUE)
         
-        outtext <- data.frame(
-          Effect=x$ANOVA$Effect,
-          Text=paste("F(", txttable$df1, "," ,txttable$df2, ") = ", txttable$F, 
-                     pcorr, petasqcorr,sep=""));
-        
+        #outtext <- data.frame(
+        #  Effect=x$ANOVA$Effect,
+        #  Text=paste("F(", txttable$df1, "," ,txttable$df2, ") = ", txttable$F, 
+        #             pcorr, petasqcorr,sep=""));
+ 		if (show.eps == 3) {
+		  outtext <- data.frame(
+		    Effect=x$ANOVA$Effect,
+            Text=paste("F(", txttable$df1, dfsep, txttable$df2, ") = ", txttable$F, 
+                       pcorr, petasqcorr, txttable$epsilon, sep=""));
+		} else if (show.eps == 2) {
+		  outtext <- data.frame(
+		    Effect=x$ANOVA$Effect,
+            Text=paste("F(", txttable$df1, dfsep, txttable$df2, ") = ", txttable$F, txttable$epsilon, 
+                       pcorr, petasqcorr,sep=""));
+		} else {
+		  outtext <- data.frame(
+		    Effect=x$ANOVA$Effect,
+            Text=paste("F(", txttable$df1, dfsep, txttable$df2, ") = ", txttable$F, 
+                       pcorr, petasqcorr,sep=""));
+		}
+		
       } else {
         
         getasqcorr <- paste(", ng2 = ", txttable$getasq, sep="")
@@ -155,10 +230,22 @@ anova_out <- function(ezout,
         getasqcorr <- gsub("ng2 = 0.00","ng2 < .01", getasqcorr, fixed=TRUE)
         getasqcorr <- gsub("ng2 = 0","ng2 = ", getasqcorr, fixed=TRUE)
         
-        outtext <- data.frame(
-          Effect=x$ANOVA$Effect,
-          Text=paste("F(", txttable$df1, dfsep, txttable$df2, ") = ", txttable$F, 
-                     pcorr, getasqcorr,sep=""));
+		if (show.eps == 3) {
+		  outtext <- data.frame(
+		    Effect=x$ANOVA$Effect,
+            Text=paste("F(", txttable$df1, dfsep, txttable$df2, ") = ", txttable$F, 
+                       pcorr, getasqcorr, txttable$epsilon,sep=""));
+		} else if (show.eps == 2) {
+		  outtext <- data.frame(
+		    Effect=x$ANOVA$Effect,
+            Text=paste("F(", txttable$df1, dfsep, txttable$df2, ") = ", txttable$F, txttable$epsilon, 
+                       pcorr, getasqcorr,sep=""));
+		} else {
+		  outtext <- data.frame(
+		    Effect=x$ANOVA$Effect,
+            Text=paste("F(", txttable$df1, dfsep, txttable$df2, ") = ", txttable$F, 
+                       pcorr, getasqcorr,sep=""));
+		}
         
       }
       

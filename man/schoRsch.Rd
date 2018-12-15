@@ -12,8 +12,8 @@ Offers a helping hand to psychologists and other behavioral scientists who routi
 \tabular{ll}{
 Package: \tab schoRsch\cr
 Type: \tab Package\cr
-Version: \tab 1.4\cr
-Date: \tab 2017-02-14\cr
+Version: \tab 1.5\cr
+Date: \tab 2018-12-15\cr
 License: \tab GPL-3\cr
 }
 This package contains the following functions:
@@ -31,6 +31,7 @@ This package contains the following functions:
 }
 Version history:
 \itemize{
+  \item{v1.5 | 2018-12-15 | }{Defualt value for correcting effect sizes for paired-samples t-tests changed to \code{FALSE}; the use of corrections is now displayed as feedback message. Also: New options for \code{anova_out}; it is now possible to display corrected degrees of freedom for violations of the sphericity assumption and corresponding epsilon estimates. Thanks to Onur Asci for the feature request. Additional buxfix for the dfsep argument of \code{anova_out}.}
   \item{v1.4 | 2017-02-14 | }{Bugfix for \code{cor_out} that no longer displays leading zeros for correlation coefficients; thanks to Juan Ramon Barrada for sending in the bug report.}
   \item{v1.3 | 2016-09-13 | }{Overall documentation update based on comments from Vincent LeBlanc.}
   \item{v1.2 | 2015-07-05 | }{Bugfix for the \code{print} option of \code{anova_out}; thanks to Sylvain Clement for sending in the bug report. Minor code changes.}
