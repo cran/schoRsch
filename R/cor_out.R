@@ -62,7 +62,7 @@ cor_out <- function(coroutput, stats = FALSE, print = TRUE) {
      pcorr <- gsub("p = 0","p = ", pcorr, fixed=TRUE)
      
      rcorr <- gsub("0.",".",outtable$coefficient,fixed=TRUE)
-     rcorr <- gsub("-.0","-.",rcorr,fixed=TRUE)
+     rcorr <- gsub("-0.","-.",rcorr,fixed=TRUE)
     
   outtext <- data.frame(
   Text=paste("r(",outtable$n,") = ", rcorr,statout, pcorr,sep=""));
@@ -87,7 +87,7 @@ cor_out <- function(coroutput, stats = FALSE, print = TRUE) {
      pcorr <- gsub("p = 0","p = ", pcorr, fixed=TRUE)
      
      rcorr <- gsub("0.",".",outtable$coefficient,fixed=TRUE)
-     rcorr <- gsub("-.0","-.",rcorr,fixed=TRUE)
+     rcorr <- gsub("-0.","-.",rcorr,fixed=TRUE)
      
      outtext <- data.frame(
      Text=paste("rho = " , rcorr, statout,pcorr,sep=""));
