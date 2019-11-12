@@ -116,8 +116,8 @@ anova_out <- function(ezout,
                   txttable[iaov,6] <- pmaucorr;
 				  # Correct dfs and get epsilon estimates
 				  if (corr.df == TRUE) {
-					corr.df1 <- format(round(x$"Sphericity Corrections"$GGe[isph]*txttable[iaov,3],2),nsmall=2);
-					corr.df2 <- format(round(x$"Sphericity Corrections"$GGe[isph]*txttable[iaov,4],2),nsmall=2);
+					corr.df1 <- format(round(x$"Sphericity Corrections"$GGe[isph]*as.numeric(txttable[iaov,3]),2),nsmall=2);
+					corr.df2 <- format(round(x$"Sphericity Corrections"$GGe[isph]*as.numeric(txttable[iaov,4]),2),nsmall=2);
 				    txttable[iaov,3]=corr.df1;
 					# Append epsilon estimate to df2 (if it is to be reported in the df parentheses)
 					if (show.eps == 1) {
@@ -140,8 +140,8 @@ anova_out <- function(ezout,
                   txttable[iaov,6]=pmaucorr
 				  # Correct dfs and get epsilon estimates
 				  if (corr.df == TRUE) {
-					corr.df1 <- format(round(x$"Sphericity Corrections"$HFe[isph]*txttable[iaov,3],2),nsmall=2);
-					corr.df2 <- format(round(x$"Sphericity Corrections"$HFe[isph]*txttable[iaov,4],2),nsmall=2);
+					corr.df1 <- format(round(x$"Sphericity Corrections"$HFe[isph]*as.numeric(txttable[iaov,3]),2),nsmall=2);
+					corr.df2 <- format(round(x$"Sphericity Corrections"$HFe[isph]*as.numeric(txttable[iaov,4]),2),nsmall=2);
 				    txttable[iaov,3]=corr.df1;
 					# Append epsilon estimate to df2 (if it is to be reported in the df parentheses)
 					if (show.eps == 1) {

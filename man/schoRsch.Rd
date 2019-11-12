@@ -12,13 +12,13 @@ Offers a helping hand to psychologists and other behavioral scientists who routi
 \tabular{ll}{
 Package: \tab schoRsch\cr
 Type: \tab Package\cr
-Version: \tab 1.6\cr
+Version: \tab 1.7\cr
 Date: \tab 2010-05-02\cr
 License: \tab GPL-3\cr
 }
 This package contains the following functions:
 \itemize{
-  \item{\code{\link[schoRsch:anova_out]{anova_out}}: }{Formats the output object from \code{\link[ez:ezANOVA]{ezANOVA}} to the APA style (requires the \code{\link[ez]{ez}} package).}
+  \item{\code{\link[schoRsch:anova_out]{anova_out}}: }{Formats the output object from \code{\link[ez:ezANOVA]{ezANOVA}} to the APA style (requires the \code{ez} package).}
   \item{\code{\link[schoRsch:cor_out]{cor_out}}: }{Formats the output object from \code{\link[stats:cor.test]{cor.test}} to the APA style.}
   \item{\code{\link[schoRsch:chi_out]{chi_out}}: }{Formats the output object from \code{\link[stats:chisq.test]{chisq.test}} to the APA style.}
   \item{\code{\link[schoRsch:t_out]{t_out}}: }{Formats the output object from \code{\link[stats:t.test]{t.test}} to the APA style.}
@@ -31,6 +31,7 @@ This package contains the following functions:
 }
 Version history:
 \itemize{
+  \item{v1.7 | 2019-11-12 | }{Bugfix for \code{anova_out} which crashed when assembling corrected degrees of freedom in certain cases after violations of sphericity. Thanks to Mirela Dubravac for sending in the but report.}
   \item{v1.6 | 2019-05-02 | }{Bugfix for \code{cor_out} which did not display negative correlations with 0 > r > -0.1 correctly. Thanks to Mario Reutter for the but report.}
   \item{v1.5 | 2018-12-15 | }{Default value for correcting effect sizes for paired-samples t-tests changed to \code{FALSE}; the use of corrections is now displayed as feedback message. Also: New options for \code{anova_out}; it is now possible to display corrected degrees of freedom for violations of the sphericity assumption and corresponding epsilon estimates. Thanks to Onur Asci for the feature request. Additional buxfix for the dfsep argument of \code{anova_out}.}
   \item{v1.4 | 2017-02-14 | }{Bugfix for \code{cor_out} that no longer displays leading zeros for correlation coefficients; thanks to Juan Ramon Barrada for sending in the bug report.}
