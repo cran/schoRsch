@@ -1,6 +1,6 @@
-8c747999fc65a6f93b659e20b25276f1 *DESCRIPTION
+42f429304d6d821e9a96f51e4f29400f *DESCRIPTION
 e0594060c30a82c7dfc4296ff877b46d *NAMESPACE
-b4140d1517f06da0aaac087ea4328e74 *R/anova_out.R
+80949ec6c9ae18f10313b76354d61ea9 *R/anova_out.R
 bc449636c5786f5ca293cc6788940fe2 *R/cd.R
 dcb60a99d7f2ba60aa8e470d23aded57 *R/chi_out.R
 b565242b0d01b986ccd1aad534373fe4 *R/clear.R
@@ -17,7 +17,7 @@ b804527badaf57d4df09a49dbd9dd59a *R/ntiles.R
 3ac9fc28e09ea5257fb3c7ad7fad5844 *man/cor_out.Rd
 1e3e7cfd7d8394dfc33de20c8feae096 *man/ntiles.Rd
 abaf15a9ec43cc65424b7683572b57e7 *man/outlier.Rd
-6edccc2371aa6608ec79ad26befd328b *man/schoRsch.Rd
+1a9cf441f41270237deace56ae9dc537 *man/schoRsch.Rd
 dffd387843d9e832040c3acda4747710 *man/t_out.Rd
 c2b1797529fdee31902fbc34bbb956ea *man/toclipboard.Rd
 f492c1585a8986b5add00f8c027f7de9 *man/zscores.Rd

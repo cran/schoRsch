@@ -112,7 +112,9 @@ anova_out <- function(ezout,
               if (x$ANOVA[iaov,1]==eoi) {
                 if (toupper(sph.cor)=="GG") {
                   pmaucorr <- format(round(x$"Sphericity Corrections"$"p[GG]"[isph],3),nsmall=3);
-                  levels(txttable$p) <- c(levels(txttable$p), pmaucorr)
+                  if (R.version$major < 4) {
+                    levels(txttable$p) <- c(levels(txttable$p), pmaucorr)
+                  }
                   txttable[iaov,6] <- pmaucorr;
 				  # Correct dfs and get epsilon estimates
 				  if (corr.df == TRUE) {
@@ -136,7 +138,9 @@ anova_out <- function(ezout,
 				  }
                 } else if (toupper(sph.cor)=="HF") {
                   pmaucorr <- format(round(x$"Sphericity Corrections"$"p[HF]"[isph],3),nsmall=3);
-                  levels(txttable$p) <- c(levels(txttable$p), pmaucorr)
+                  if (R.version$major < 4) {
+                    levels(txttable$p) <- c(levels(txttable$p), pmaucorr)
+                  }
                   txttable[iaov,6]=pmaucorr
 				  # Correct dfs and get epsilon estimates
 				  if (corr.df == TRUE) {
