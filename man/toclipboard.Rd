@@ -7,7 +7,8 @@ toclipboard(data,
             sep = "\t", quote = FALSE,
             eol = "\n",  na = "NA",
             dec = ".", row.names = FALSE,
-            col.names = TRUE)
+            col.names = TRUE,
+			clipwarning = FALSE)
 }
 \arguments{
 \item{data}{The first argument should be the data frame or variable that is to be written to the clipboard. Data frames are copied with column names but without row names and columns are separated by tabs. This behavior can be customized with the following optional arguments (passed to \code{\link{write.table}}).}
@@ -18,6 +19,7 @@ toclipboard(data,
 \item{dec}{Decimal separator.}
 \item{row.names}{Should row names be written?}
 \item{col.names}{Should column names be written?}
+\item{clipwarning}{Determine if warnings should overwrite clipboard content (especially in case of buffer overflow when attempting to copy large datasets to the clipboard.}
 }
 %\details{ }
 %\value{ }

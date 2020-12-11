@@ -31,6 +31,7 @@ This package contains the following functions:
 }
 Version history:
 \itemize{
+  \item{v1.9 | 2020-12-11 | }{Added argument \code{clipwarning} to \code{toclipboard}. Thanks to Moritz Schaaf for the feature request.}
   \item{v1.8 | 2020-09-23 | }{Fix for the changed behavior of factor levels for strings as introduced in R 4.0 (relevant for \code{anova_out}). Thanks to Valentin Koob for sending in the bug report.}
   \item{v1.7 | 2019-11-12 | }{Bugfix for \code{anova_out} which crashed when assembling corrected degrees of freedom in certain cases after violations of sphericity. Thanks to Mirela Dubravac for sending in the bug report.}
   \item{v1.6 | 2019-05-02 | }{Bugfix for \code{cor_out} which did not display negative correlations with 0 > r > -0.1 correctly. Thanks to Mario Reutter for the bug report.}
