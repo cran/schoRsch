@@ -1,8 +1,8 @@
 Package: schoRsch
 Type: Package
 Title: Tools for Analyzing Factorial Experiments
-Version: 1.9
-Date: 2020-12-11
+Version: 1.9.1
+Date: 2020-12-14
 Author: Roland Pfister, Markus Janczyk
 Maintainer: Roland Pfister <roland.pfister@psychologie.uni-wuerzburg.de>
 Imports: utils
@@ -11,6 +11,6 @@ Description: Offers a helping hand to psychologists and other behavioral scienti
 URL: http://www.tqmp.org/RegularArticles/vol12-2/p147/index.html
 License: GPL
 NeedsCompilation: no
-Packaged: 2020-12-11 19:07:24 UTC; Roland
+Packaged: 2020-12-14 16:00:19 UTC; Roland
 Repository: CRAN
-Date/Publication: 2020-12-11 19:30:02 UTC
+Date/Publication: 2020-12-15 08:30:02 UTC
