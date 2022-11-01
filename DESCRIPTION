@@ -1,16 +1,16 @@
 Package: schoRsch
 Type: Package
 Title: Tools for Analyzing Factorial Experiments
-Version: 1.9.1
-Date: 2020-12-14
+Version: 1.10
+Date: 2022-11-01
 Author: Roland Pfister, Markus Janczyk
-Maintainer: Roland Pfister <roland.pfister@psychologie.uni-wuerzburg.de>
+Maintainer: Roland Pfister <mail@roland-pfister.net>
 Imports: utils
 Suggests: ez
 Description: Offers a helping hand to psychologists and other behavioral scientists who routinely deal with experimental data from factorial experiments. It includes several functions to format output from other R functions according to the style guidelines of the APA (American Psychological Association). This formatted output can be copied directly into manuscripts to facilitate data reporting. These features are backed up by a toolkit of several small helper functions, e.g., offering out-of-the-box outlier removal. The package lends its name to Georg "Schorsch" Schuessler, ingenious technician at the Department of Psychology III, University of Wuerzburg. For details on the implemented methods, see Roland Pfister and Markus Janczyk (2016) <doi: 10.20982/tqmp.12.2.p147>.
-URL: http://www.tqmp.org/RegularArticles/vol12-2/p147/index.html
+URL: https://www.tqmp.org/RegularArticles/vol12-2/p147/index.html
 License: GPL
 NeedsCompilation: no
-Packaged: 2020-12-14 16:00:19 UTC; Roland
+Packaged: 2022-11-01 18:03:07 UTC; Roland
 Repository: CRAN
-Date/Publication: 2020-12-15 08:30:02 UTC
+Date/Publication: 2022-11-01 21:14:58 UTC
