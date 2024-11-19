@@ -82,6 +82,7 @@ t_out <- function(toutput,
     if (exists("note")) {
         cat(paste("\nNOTE: ", note,sep="")); 
     }
+    cat("\n");
   } else {
     outtext;
   }

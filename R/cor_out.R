@@ -3,7 +3,7 @@
 # Requires output object from cor.test as input
 # argument.
 # -----------------------------------------------
-cor_out <- function(coroutput, stats = FALSE, print = TRUE) {
+cor_out <- function(coroutput, stats = FALSE, print = TRUE, df = TRUE) {
   
   # ---------------------------------------------
   # (1) Assemble summary table
@@ -13,12 +13,12 @@ cor_out <- function(coroutput, stats = FALSE, print = TRUE) {
   {
     outtable <- data.frame(
     coefficient=format(round(coroutput$estimate,2),nsmall = 2),
-    n = coroutput$parameter+2,
+    n=coroutput$parameter+2,
     p=format(round(coroutput$p.value,3),nsmall = 3)
     )
     
     
-    if (stats == TRUE)  # wenn Statistik mit ausgegeben werden soll
+    if (stats == TRUE)  # output statistics
     {
        statout = paste(", t(" , coroutput$parameter , ") = " , 
                        format(round(coroutput$statistic,2),nsmall = 2),sep="")  
@@ -33,7 +33,7 @@ cor_out <- function(coroutput, stats = FALSE, print = TRUE) {
     p=format(round(coroutput$p.value,3),nsmall= 3)
     )
     
-    if (stats == TRUE)  # wenn Statistik mit ausgegeben werden soll
+    if (stats == TRUE)  # output statistics
     {
       if (coroutput$method == "Kendall's rank correlation tau")
       {
@@ -64,8 +64,14 @@ cor_out <- function(coroutput, stats = FALSE, print = TRUE) {
      rcorr <- gsub("0.",".",outtable$coefficient,fixed=TRUE)
      rcorr <- gsub("-0.","-.",rcorr,fixed=TRUE)
     
-  outtext <- data.frame(
-  Text=paste("r(",outtable$n,") = ", rcorr,statout, pcorr,sep=""));
+  if (df == FALSE) {
+    outtext <- data.frame(Text=paste("r(",outtable$n,") = ", 
+                                     rcorr,statout, pcorr,sep=""));
+  } else {
+    outtext <- data.frame(Text=paste("r(",outtable$n-2,") = ", 
+                                     rcorr,statout, pcorr,sep=""));
+  }
+  
   }  else if (coroutput$method == "Kendall's rank correlation tau")
   {
      pcorr <- paste(", p = ", outtable$p, sep="")
@@ -98,4 +104,11 @@ cor_out <- function(coroutput, stats = FALSE, print = TRUE) {
   } else {
     outtext;  
   }
+  
+  if (coroutput$method == "Pearson's product-moment correlation") {
+  if (df == TRUE) {
+    cat("\nNote: As of version 1.11, cor_cout shows r(df) rather than r(N) by default.\n")
+  }
+  }
+  
 }

@@ -9,7 +9,8 @@ clear_all_but(keep = NULL)
   \item{keep}{Variables to keep. Specified as a vector of strings.}
 }
 \details{
-An R version of the eponymous custom MATLAB function (https://de.mathworks.com/matlabcentral/fileexchange/25339-clear-all-but).
+An R version of the eponymous custom MATLAB function 
+(https://de.mathworks.com/matlabcentral/fileexchange/25339-clear-all-but).
 }
 %\value{ }
 %\references{}

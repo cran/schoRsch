@@ -3,12 +3,13 @@
 \title{Format Correlation Test Statistics}
 \description{Distilles the most relevant data from an output object of \code{cor.test} and displays the results in a compact format.}
 \usage{
-cor_out(coroutput, stats = FALSE, print = TRUE)
+cor_out(coroutput, stats = FALSE, print = TRUE, df = TRUE)
 }
 \arguments{
   \item{coroutput}{Output object created by a call to \code{cor.test}.}
   \item{stats}{If \code{TRUE}, the output includes t-values and corresponding degrees of freedom (default=\code{FALSE}.}
   \item{print}{Force results to be displayed, even if the function output is assigned to a variable (e.g., \code{output <- cor_out(...)}; logical; default=\code{TRUE}).}
+  \item{df}{Show degrees of freedom (df) rather than sample size (N) in parentheses after the Pearson correlation coefficient to match APA Style; logical; default=\code{TRUE}) as of schoRsch v1.11.}
 }
 \details{
 The output of a call to \code{cor.test} is formatted according to the guidelines of the APA (American Psychological Association) as well as the DGPs ("Deutsche Gesellschaft fuer Psychologie"; German Psychological Society).

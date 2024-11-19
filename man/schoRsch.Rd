@@ -12,13 +12,15 @@ Offers a helping hand to psychologists and other behavioral scientists who routi
 \tabular{ll}{
 Package: \tab schoRsch\cr
 Type: \tab Package\cr
-Version: \tab 1.10\cr
-Date: \tab 2022-11-01\cr
+Version: \tab 1.11\cr
+Date: \tab 2024-11-19\cr
 License: \tab GPL-3\cr
 }
 This package contains the following functions:
-\itemize{
+%\itemize{
+\describe{
   \item{\code{\link[schoRsch:anova_out]{anova_out}}: }{Formats the output object from \code{\link[ez:ezANOVA]{ezANOVA}} to the APA style (requires the \code{ez} package).}
+  \item{\code{\link[schoRsch:bimod_coef]{bimod_coef}}: }{Computes the bimodality coefficient for a data distribution.}
   \item{\code{\link[schoRsch:cor_out]{cor_out}}: }{Formats the output object from \code{\link[stats:cor.test]{cor.test}} to the APA style.}
   \item{\code{\link[schoRsch:chi_out]{chi_out}}: }{Formats the output object from \code{\link[stats:chisq.test]{chisq.test}} to the APA style.}
   \item{\code{\link[schoRsch:t_out]{t_out}}: }{Formats the output object from \code{\link[stats:t.test]{t.test}} to the APA style.}
@@ -31,7 +33,9 @@ This package contains the following functions:
   \item{\code{\link[schoRsch:clear]{clear_all_but}}: }{Clears the whole workspace while keeping named variables.}
 }
 Version history:
-\itemize{
+%\itemize{
+\describe{
+  \item{v1.11 | 2024-11-19 | }{Added \code{bimod_coef} as contributed by Moritz Schaaf. Buxfix for \code{t_out}, which was missing a newline when printing output. Added an option to output degrees of freedom rather than sample size for \code{cor_out}, with r(df) being the new default.}
   \item{v1.10 | 2022-11-01 | }{Added \code{clear_all_but} as kindly contributed by Moritz Schaaf.}
   \item{v1.9  | 2020-12-11 | }{Added argument \code{clipwarning} to \code{toclipboard}. Thanks to Moritz Schaaf for the feature request (v1.9.1 provided an instant bugfix to the new code).}
   \item{v1.8  | 2020-09-23 | }{Fix for the changed behavior of factor levels for strings as introduced in R 4.0 (relevant for \code{anova_out}). Thanks to Valentin Koob for sending in the bug report.}
